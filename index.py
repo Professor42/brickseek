@@ -57,12 +57,14 @@ def parse_items(items, base_url):
     for item in items:
         item_link = base_url + \
             item.find(".item-list__link", first=True).attrs["href"]
+        title = item.find(".item-list__title", first=True).text.strip()
         new_price, old_price = item.find(".item-list__price-number")[0].text.strip(
         ), item.find(".item-list__price-number")[1].text.strip()
         availability = item.find(
             ".availability-status-indicator__text", first=True).text.strip()
         obj = {
             "Item Link": item_link,
+            "Title": title,
             "New Price": new_price,
             "Old Price": old_price,
             "Availability": availability
