@@ -1,4 +1,5 @@
 # Imports
+from datetime import date
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -7,6 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 from requests_html import HTML
 import os
+
+today = date.today()
 
 
 def login(driver, username, password):
@@ -77,7 +80,7 @@ def parse_items(items, base_url):
 
 def save_as_csv(final_data, store):
     df = pd.DataFrame.from_dict(final_data)
-    df.to_csv(f"{store}.csv", header=True, index=False)
+    df.to_csv(today{store}.csv", header=True, index=False)
     print("saved successfully")
 
 
