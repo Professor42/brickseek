@@ -80,7 +80,7 @@ def parse_items(items, base_url):
 
 def save_as_csv(final_data, store):
     df = pd.DataFrame.from_dict(final_data)
-    df.to_csv(today{store}.csv", header=True, index=False)
+    today.to_csv(f"{store}.csv", header=True, index=False)
     print("saved successfully")
 
 
