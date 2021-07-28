@@ -80,6 +80,7 @@ def parse_items(items, base_url):
 
 def save_as_csv(final_data, store):
     df = pd.DataFrame.from_dict(final_data)
+    store = "SHV" if store == "2728" else "WM"
     df.to_csv(f"{store}.csv", header=True, index=False)
     print("saved successfully")
 
